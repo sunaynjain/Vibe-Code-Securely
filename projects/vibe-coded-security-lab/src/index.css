@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', Menlo, Monaco, Consolas, monospace;
+  
+  --color-bg-base: #0B0B0C;
+  --color-bg-elevated: #111113;
+  --color-bg-surface: #19191C;
+  
+  --color-text-primary: #F5F5F5;
+  --color-text-secondary: #A0A0A5;
+  --color-text-muted: #717176;
+  
+  --color-border-subtle: #2A2A2E;
+  --color-border-hover: #45454C;
+  --color-border-active: #F5F5F5;
+  
+  --color-danger-red: #FF4D4D;
+  --color-danger-red-dim: rgba(255, 77, 77, 0.12);
+  --color-secure-green: #54C79A;
+  --color-secure-green-dim: rgba(84, 199, 154, 0.12);
+
+  /* Legacy variable mappings to maintain full stability across existing class bindings */
+  --color-dark-charcoal: #0B0B0C;
+  --color-surface: #111113;
+  --color-surface-elevated: #19191C;
+  --color-border: #2A2A2E;
+  
+  --color-accent-red: #FF4D4D;
+  --color-accent-green: #54C79A;
+  --color-accent-cyan: #F5F5F5; /* Neutralized to crisp monochrome */
+  --color-accent-purple: #A0A0A5;
+}
+
+@layer base {
+  html, body, #root {
+    min-height: 100%;
+    width: 100%;
+  }
+  body {
+    background-color: var(--color-bg-base);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+  
+  ::selection {
+    background: #F5F5F5;
+    color: #0B0B0C;
+  }
+}
+
+/* Swiss Editorial Grid Background */
+.bg-grid {
+  background-size: 48px 48px;
+  background-image: 
+    linear-gradient(to right, rgba(42, 42, 46, 0.6) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(42, 42, 46, 0.6) 1px, transparent 1px);
+}
+
+.bg-dots {
+  background-size: 24px 24px;
+  background-image: radial-gradient(rgba(113, 113, 118, 0.3) 1px, transparent 1px);
+}
+
+/* Swiss Brutalist Panel - No blur, sharp architectural border */
+.glass-panel,
+.swiss-panel {
+  background-color: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 0px;
+}
+
+/* Technical Monospace & UI */
+button, input, textarea {
+  font-family: inherit;
+}
+
+code, pre, .font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Custom scrollbars for code panels */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0B0C;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2A2A2E;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #45454C;
+}
